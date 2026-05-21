@@ -6,6 +6,12 @@ This project implements an agentic support-ticket triage system. It takes a free
 
 ---
 
+## Live Demo
+
+Streamlit app: https://smart-ticket-triage-agent.streamlit.app/
+
+Note: The live demo runs using fallback mode unless a valid Gemini API key is configured securely in the deployment environment.
+
 ## Problem Statement
 
 The system accepts:
@@ -152,7 +158,6 @@ git clone https://github.com/Abhijeet01khot/potens-intern-aiml-abhijeet-khot.git
 cd potens-intern-aiml-abhijeet-khot
 ```
 
-Replace `YOUR_USERNAME` with your GitHub username.
 
 ### 2. Create virtual environment
 
@@ -186,6 +191,8 @@ Then activate again:
 pip install -r requirements.txt
 ```
 
+Note: `requirements.txt` is intentionally kept minimal for Streamlit Cloud deployment. It includes only the direct dependencies needed to run the app.
+
 ### 5. Add environment variable
 
 Create a `.env` file in the root folder:
@@ -210,13 +217,33 @@ http://localhost:8501
 
 ---
 
+## Deployment
+
+The app is deployed on Streamlit Community Cloud.
+
+Live demo:
+
+```text
+https://smart-ticket-triage-agent.streamlit.app/
+```
+
+Deployment settings:
+
+```text
+Repository: Abhijeet01khot/potens-intern-aiml-abhijeet-khot
+Branch: master
+Main file path: app.py
+```
+
+`requirements.txt` was simplified to direct dependencies only so Streamlit Cloud can resolve packages reliably.
+
 ## How the Agent Works
 
 The system follows this flow:
 
 1. User enters a ticket and optional metadata.
-2. The agent sends the ticket to Gemini for classification.
-3. Gemini returns structured JSON with category, priority, confidence, next tool, reasoning, and why.
+2. If a valid Gemini API key is configured, the agent can send the ticket to Gemini for classification.
+3. If no API key is configured, the fallback triage mode returns structured JSON with category, priority, confidence, next tool, reasoning, and why.
 4. Python executes real callable tools.
 5. Tool outputs are attached to the final response.
 6. A visible reasoning trace is shown in the UI.
@@ -344,6 +371,7 @@ The app still runs from a clean clone even without the Gemini API key.
 - Four real callable tools
 - Visible reasoning trace
 - Streamlit UI
+- Streamlit Cloud live demo
 - Ten example test inputs
 - Fallback mode when Gemini API is unavailable
 - Basic baseline comparison
@@ -359,6 +387,7 @@ The app still runs from a clean clone even without the Gemini API key.
 - The system is not connected to a real CRM, database, or ticketing tool.
 - The reasoning trace is a transparent operational trace, not hidden chain-of-thought from the model.
 - Gemini API integration is implemented, but the submitted repository does not include a real API key. Reviewers can add their own key in `.env`, or use the fallback mode.
+- `requirements.txt` is intentionally minimal for deployment reliability instead of being a full `pip freeze` export.
 
 ---
 
@@ -373,7 +402,7 @@ Given more time, I would add:
 5. Human review workflow for P0 and low-confidence tickets.
 6. Unit tests for every tool.
 7. Export to CSV or JSON for operations teams.
-8. Deployment on Streamlit Community Cloud or Render.
+8. More production-ready deployment with authentication, monitoring, and secure secret management.
 
 ---
 
