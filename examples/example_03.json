@@ -1,0 +1,16 @@
+{
+  "input": {
+    "ticket_text": "The app keeps crashing whenever I try to upload a document.",
+    "metadata": {
+      "customer_tier": "premium",
+      "channel": "app",
+      "previous_tickets": 2
+    }
+  },
+  "expected_output": {
+    "category": "technical",
+    "priority": "P1",
+    "next_tool": "search_similar_ticket_tool",
+    "why": "Repeated app crashes affect product usage and should be checked by technical support."
+  }
+}

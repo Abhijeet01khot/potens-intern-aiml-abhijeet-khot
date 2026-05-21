@@ -1,0 +1,16 @@
+{
+  "input": {
+    "ticket_text": "I think my account is hacked and someone changed my email.",
+    "metadata": {
+      "customer_tier": "premium",
+      "channel": "email",
+      "previous_tickets": 0
+    }
+  },
+  "expected_output": {
+    "category": "account",
+    "priority": "P0",
+    "next_tool": "human_escalation_tool",
+    "why": "Possible account hacking is a security-sensitive issue and should be escalated immediately."
+  }
+}

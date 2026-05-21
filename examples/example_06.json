@@ -1,0 +1,16 @@
+{
+  "input": {
+    "ticket_text": "Can you tell me the available plans and pricing?",
+    "metadata": {
+      "customer_tier": "standard",
+      "channel": "website",
+      "previous_tickets": 0
+    }
+  },
+  "expected_output": {
+    "category": "general",
+    "priority": "P2",
+    "next_tool": "draft_acknowledgement_tool",
+    "why": "This is an informational request and does not show urgent customer impact."
+  }
+}

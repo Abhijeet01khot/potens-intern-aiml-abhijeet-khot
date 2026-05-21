@@ -1,0 +1,16 @@
+{
+  "input": {
+    "ticket_text": "My payment was deducted but my order is not showing in the app.",
+    "metadata": {
+      "customer_tier": "standard",
+      "channel": "app",
+      "previous_tickets": 0
+    }
+  },
+  "expected_output": {
+    "category": "billing",
+    "priority": "P1",
+    "next_tool": "lookup_policy_tool",
+    "why": "Payment deduction without order confirmation is a money-related issue and should be handled quickly."
+  }
+}

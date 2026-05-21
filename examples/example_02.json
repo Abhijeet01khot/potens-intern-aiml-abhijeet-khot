@@ -1,0 +1,16 @@
+{
+  "input": {
+    "ticket_text": "I cannot login because OTP is not coming on my phone.",
+    "metadata": {
+      "customer_tier": "standard",
+      "channel": "app",
+      "previous_tickets": 1
+    }
+  },
+  "expected_output": {
+    "category": "account",
+    "priority": "P1",
+    "next_tool": "lookup_policy_tool",
+    "why": "Login failure blocks the user from accessing the service, so it requires quick support."
+  }
+}

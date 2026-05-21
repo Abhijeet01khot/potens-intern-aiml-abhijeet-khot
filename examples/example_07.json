@@ -1,0 +1,16 @@
+{
+  "input": {
+    "ticket_text": "I cancelled my subscription yesterday but refund is not received yet.",
+    "metadata": {
+      "customer_tier": "standard",
+      "channel": "email",
+      "previous_tickets": 1
+    }
+  },
+  "expected_output": {
+    "category": "refund",
+    "priority": "P2",
+    "next_tool": "lookup_policy_tool",
+    "why": "The ticket is about cancellation and refund status, which should be checked against refund policy."
+  }
+}

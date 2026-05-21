@@ -1,0 +1,16 @@
+{
+  "input": {
+    "ticket_text": "The website is completely down and none of our team members can access it.",
+    "metadata": {
+      "customer_tier": "enterprise",
+      "channel": "phone",
+      "previous_tickets": 3
+    }
+  },
+  "expected_output": {
+    "category": "technical",
+    "priority": "P0",
+    "next_tool": "human_escalation_tool",
+    "why": "A complete outage for an enterprise customer has severe business impact and needs immediate escalation."
+  }
+}

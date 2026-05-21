@@ -1,0 +1,16 @@
+{
+  "input": {
+    "ticket_text": "My service appointment was scheduled for yesterday but nobody came.",
+    "metadata": {
+      "customer_tier": "standard",
+      "channel": "phone",
+      "previous_tickets": 0
+    }
+  },
+  "expected_output": {
+    "category": "delivery",
+    "priority": "P1",
+    "next_tool": "lookup_policy_tool",
+    "why": "A missed service appointment is an operational delay and needs quick follow-up."
+  }
+}

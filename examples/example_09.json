@@ -1,0 +1,16 @@
+{
+  "input": {
+    "ticket_text": "I was charged twice for the same invoice.",
+    "metadata": {
+      "customer_tier": "premium",
+      "channel": "email",
+      "previous_tickets": 0
+    }
+  },
+  "expected_output": {
+    "category": "billing",
+    "priority": "P1",
+    "next_tool": "lookup_policy_tool",
+    "why": "Duplicate charging is a billing issue that directly affects the customer financially."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "input": {
+    "ticket_text": "Please update my phone number in my account.",
+    "metadata": {
+      "customer_tier": "standard",
+      "channel": "whatsapp",
+      "previous_tickets": 0
+    }
+  },
+  "expected_output": {
+    "category": "account",
+    "priority": "P2",
+    "next_tool": "draft_acknowledgement_tool",
+    "why": "This is an account update request with low urgency."
+  }
+}
