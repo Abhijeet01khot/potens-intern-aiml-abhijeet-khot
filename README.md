@@ -148,7 +148,7 @@ potens-intern-aiml-abhijeet-khot/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/potens-intern-aiml-abhijeet-khot.git
+git clone https://github.com/Abhijeet01khot/potens-intern-aiml-abhijeet-khot.git
 cd potens-intern-aiml-abhijeet-khot
 ```
 
