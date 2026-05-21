@@ -358,6 +358,7 @@ The app still runs from a clean clone even without the Gemini API key.
 - The baseline comparison is implemented in code but not visualised as a full evaluation dashboard.
 - The system is not connected to a real CRM, database, or ticketing tool.
 - The reasoning trace is a transparent operational trace, not hidden chain-of-thought from the model.
+- Gemini API integration is implemented, but the submitted repository does not include a real API key. Reviewers can add their own key in `.env`, or use the fallback mode.
 
 ---
 
@@ -385,15 +386,23 @@ Approximate usage: 35-45 messages.
 Used for:
 
 - Understanding the assignment requirements
-- Choosing between the two AI/ML questions
+- Choosing the AI/ML Q2 Triage Agent problem
 - Planning the project structure
-- Writing initial code for the Streamlit app, agent flow, tools, examples, and README
-- Debugging setup and Git commands
-- Improving explanation quality in the README
+- Writing initial code for the Streamlit app, agent flow, callable tools, examples, and README
+- Debugging Python setup, Streamlit run issues, Git commands, and GitHub upload
+- Improving the README and submission content
 
 ### Google Gemini API
 
-Used inside the application as the LLM decision layer for classifying tickets and returning structured JSON.
+Gemini API support is implemented in the code as the optional LLM decision layer.
+
+However, the repository does not include a real API key because `.env` is intentionally ignored for security. If a reviewer adds a valid `GEMINI_API_KEY` in a local `.env` file, the app can call Gemini for structured triage decisions.
+
+For reliability during review, I also implemented a fallback rule-based triage mode. This allows the Streamlit app to run even when no Gemini API key is configured.
+
+### Honesty Note
+
+I used AI assistance heavily for planning, code generation, debugging, and README writing. I reviewed the generated code, tested it locally, committed it to GitHub, and kept the project focused on the assignment requirements.
 
 ---
 
